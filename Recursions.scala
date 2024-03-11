@@ -43,5 +43,34 @@ object Funcations extends  App {
     x
   }
   println(loopFunc(2,concatenateFunction(4)))
+
+
+  // Simple counter
+
+    val newCounter = new Counter
+  println(newCounter.inc(1).print)
+
+
+  class Counter(i:Int = 0) {
+    def retInc = {
+      new Counter(i + 1)
+    }
+
+    def retDec = {
+      new Counter(i - 1)
+    }
+
+    def inc(i:Int):Counter = {
+      if(i >= 10) this
+      else retInc.inc(i +  1)
+    }
+
+    def dec(i:Int):Counter = {
+      if(i <= 0) this
+      else retInc.dec(i - 1)
+    }
+
+    def print = println(i)
+  }
 }
 
