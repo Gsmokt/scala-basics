@@ -43,11 +43,16 @@ object Funcations extends  App {
     x
   }
   println(loopFunc(2,concatenateFunction(4)))
+  
 
 
   // Simple counter
+  // Kinda funny - each iteraction works on new instace of same class - immutability in case of class LOL
 
+  
     val newCounter = new Counter
+  print(newCounter.retInc.retInc.retInc.print)
+  // Same as belowe
   println(newCounter.inc(1).print)
 
 
