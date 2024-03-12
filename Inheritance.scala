@@ -28,11 +28,16 @@ object Inheritance extends App {
       this(s, i)
     }
     // wtf - private and protected shared with object
-    def pritnSomethingFromTheObject():Unit = Person.printSomething()
+    final def pritnSomethingFromTheObject():Unit = Person.printSomething()
+    
   }
 
   class Woman(override val name:String,override val age:Int) extends Person(name,age) {
     // just like - override val s:String = name
+    super.pritnSomethingFromTheObject()
+    // same as java
+    // final, sealed - the same
+    // can't override def pritnSomethingFromTheObject
   }
 
 
