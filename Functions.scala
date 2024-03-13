@@ -23,7 +23,17 @@ object WhatsAFunction extends App {
   // so we can write function as function xddddddddddddddddddddddddddddd
   // LOL
   // xd
-  
+
+
+   
+  val fnc:Function1[Int,Function1[Int,Int]] = new Function1[Int,Function1[Int,Int]]{
+    override def apply(v1: Int): Function1[Int,Int] = new Function1[Int,Int]{
+      override def apply(v2: Int): Int = v1 * v2
+    }
+  }
+  // curring in scala ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥
+  val result = fnc(1)
+  val nextResult = result(2)
 
 
 
