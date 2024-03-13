@@ -31,13 +31,21 @@ object WhatsAFunction extends App {
       override def apply(v2: Int): Int = v1 * v2
     }
   }
+    //lamba way
+  val fn: (Int) => (Int) => Int = (x:Int) => _ * x
   // curring in scala ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥
   val result = fnc(1)
   val nextResult = result(2)
 
-
-
   println(concatStrings("hello","Wordl"))
+
+
+  // underscore is not a convention, if arg not needed
+  // in scala replace arg
+  val lamba:(Int,Int) => Int = _ * _
+  println(lamba(4,4))
+  // the same in any case
+  // ar.flatMap(_ => _)
 
 }
 
