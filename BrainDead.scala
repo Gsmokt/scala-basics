@@ -28,6 +28,14 @@ object BrainDead extends App {
     // reminds compose as reduce callback in js 
 
 
+    // ok so !!!!!!!!!!!!
+    // so it looks like nTimesBetter(plusOne,1)(plusOne(1))
+    // and immediately it's like (2) => nTimesBetter(plusOne,2)(plusOne(2))
+    // it's tricky (x:Int) is ret, but stacking the same time next loops 
+    // so it can be ret in the end
+    // heh, nice
+
+
     val plus10 = nTimesBetter(plusOne,10)
 
 
