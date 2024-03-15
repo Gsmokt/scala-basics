@@ -28,6 +28,37 @@ object BrainDead extends App {
     // reminds compose as reduce callback in js 
 
 
+  // ok, ok not the same implementation like in js, but for me it's .... the same, who cares ! 
+    function compose(f, g) {
+//   return function (...args) {
+//     return f(g(...args));
+//   };
+// }
+
+// function composeAll(...fns) {
+//   return fns.reduce(compose); // return function is (...args) => f(g(h(j(k(...args)))))
+// }
+
+// function f(x) {
+//   return x + "1";
+// }
+// function g(x) {
+//   return x + "2";
+// }
+// function h(x) {
+//   return x + "3";
+// }
+// function j(x) {
+//   return x + "4";
+// }
+// function k(x) {
+//   return x + "5";
+// }
+
+// let result = composeAll(k, j, h, g, f)("cho");
+// console.log(result); // cho12345
+
+
     // ok so !!!!!!!!!!!!
     // so it looks like nTimesBetter(plusOne,1)(plusOne(1))
     // and immediately it's like (2) => nTimesBetter(plusOne,2)(plusOne(2))
