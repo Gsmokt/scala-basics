@@ -28,6 +28,8 @@ object Inheritance extends App {
       this(s, i)
     }
     // wtf - private and protected shared with object
+    // with import Person._ imports all methods
+    // so we can invke it without context, just printSomething
     final def pritnSomethingFromTheObject():Unit = Person.printSomething()
     
   }
