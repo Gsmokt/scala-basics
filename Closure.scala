@@ -41,4 +41,11 @@ object Closure extends App {
     x / y
   }
   println(one)
+
+    // rest parameter
+  def func7(x:String,y:String,z:Any*) =
+    s"$x, $y, ${z.mkString(",")}"
+
+  // and spread 
+  println(func7(":D","xd",List(":)","xD","XD"):_*))
 }
