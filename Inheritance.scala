@@ -6,6 +6,10 @@ object Inheritance extends App {
   trait Action {
     def act(x:Int): Int
   }
+
+  // with abstract classes as well
+  abstract class Action:
+    def act(x:Int): Int
   
   val aInstance:Action = new Action:
     override def act(x: Int): Int = x + 1
