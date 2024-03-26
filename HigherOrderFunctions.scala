@@ -23,6 +23,10 @@ object HigherOrderFunctions extends App {
     a <- numbers
   } yield x.toString + a
 
+  // it also means nested for loops for humans 
+  val forComprehension = for {x <- List(1,2,3,4);y <- List('a','b','c','d')} yield x + y.toString
+  println(forComprehension)
+
   // and also
   val newMap = chars.flatMap { x =>
     numbers.map { a =>
