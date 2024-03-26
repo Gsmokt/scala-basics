@@ -12,6 +12,9 @@ object HigherOrderFunctions extends App {
   // but in fact it changes the purpose of use
   println(Some(5).asInstanceOf[Option[Int]].flatMap(x => Some(x + 1)))
   println(None.asInstanceOf[Option[Int]].flatMap(x => Some(x + 1)))
+  
+  // so we can verify for nullability in a simple way
+  println(List(Some(1),Some(2),None,None).flatMap(x => x))
 
 
   // tips for better readability
