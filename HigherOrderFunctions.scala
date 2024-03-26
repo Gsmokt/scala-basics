@@ -7,6 +7,12 @@ object HigherOrderFunctions extends App {
   val sub = chars.flatMap(x => numbers.map(a => x.toString() + a))
   println(sub)
 
+  // ok very interesting thing, we can use HOFs with Option[] types 
+  // so we can play around nullability
+  // but in fact it changes the purpose of use
+  println(Some(5).asInstanceOf[Option[Int]].flatMap(x => Some(x + 1)))
+  println(None.asInstanceOf[Option[Int]].flatMap(x => Some(x + 1)))
+
 
   // tips for better readability
   val forLoops = for {
