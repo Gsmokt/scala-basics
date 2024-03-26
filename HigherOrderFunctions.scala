@@ -33,4 +33,9 @@ object HigherOrderFunctions extends App {
       x.toString() + a
     }
   }
+
+  // reduce works the same as everywhere but fold starts with acumulator, reduce with first item
+  println((1 to 10).foldLeft(0)(_ + _))
+  println((1 to 10).reduceLeft(_ + _))
+  // but it's useless in such cases, cause the are simple methods like .sum, .produce, .min, .max etc. 
 }
