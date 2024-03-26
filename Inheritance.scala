@@ -2,6 +2,16 @@ package part2op
 
 object Inheritance extends App {
 
+  // signle abstarct method very similar to Interface in Go
+  trait Action {
+    def act(x:Int): Int
+  }
+  
+  val aInstance:Action = new Action:
+    override def act(x: Int): Int = x + 1
+    
+  val aFunkyInstace:Action = (x:Int) => x * x
+
 
 
   val i:Int = 18
