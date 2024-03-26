@@ -38,4 +38,10 @@ object HigherOrderFunctions extends App {
   println((1 to 10).foldLeft(0)(_ + _))
   println((1 to 10).reduceLeft(_ + _))
   // but it's useless in such cases, cause the are simple methods like .sum, .produce, .min, .max etc. 
+
+  // ok so we can do some funny things in scala, much easier with functional programming
+    val groceries = List("Apples","Milk","Naan","Eggs","Oranges")
+  // imagine nested for loops or smth like that with that shit - ugly as hell 
+    println(groceries.zipWithIndex.map(t => (t._1,t._2 + 1)).map(x => x.swap).map(x => s"${x._1}. ${x._2.toUpperCase}").mkString("\n") )
+    println(groceries zip (1 to 5))
 }
