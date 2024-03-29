@@ -2,6 +2,14 @@ package lectures.part2
 
 object Monads extends App {
 
+  // that scary monad is just wrapper of value or type etc. 
+  // allows to do some magic tricks like transform value or change type 
+  // there are complicated implementations
+  // but for god sake really????????? 
+  // that's just it ??????????
+  // f*** me or f*** that 
+  // tell me more or less :/
+
   trait Attempt[+A]{
     def flatMap[B](f: A => Attempt[B]): Attempt[B]
   }
@@ -50,4 +58,23 @@ object Monads extends App {
   })
   println(flatMappedInstance.use)
   println(  flatMappedInstance2.use)
+
+    case class SafeValue[+T](private val internalValue: T) {
+    def get: T = synchronized {
+      internalValue
+    }
+
+    def transform[S](transformer: T => SafeValue[S]) : SafeValue[S] = synchronized {
+
+      transformer(internalValue)
+    }
+  }
+
+  def gimmeSafeValue[T](value: T): SafeValue[T] = SafeValue(value)
+
+  val safeString: SafeValue[String] = gimmeSafeValue("Smth")
+  val string = safeString.get
+  val upperString = string.toUpperCase()
+  val upperSageString = SafeValue(upperString)
+  val upperSafeString2 = safeString.transform(s => SafeValue(s.toUpperCase()))
 }
