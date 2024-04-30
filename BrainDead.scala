@@ -19,6 +19,15 @@ object BrainDead extends App {
   def nTimesBetter(f:Int=>Int,n:Int):(Int => Int) =
     if(n <= 0) (x: Int) => x
     else (x:Int) => nTimesBetter(f,n-1)(f(x))
+
+    // so in fact it can be the same as a compose, 
+    // make an array of plusOnes 
+    // val arr = [plusOne,plusOne,plusOne,plusOne,plusOne,plusOne]
+  
+    // and then nTimesBetter(arr[n],n-1)(arr[n](x))
+  
+    // and it will be the same as a result
+    
     // ok some mindfuck at first look
     // but wait a minute
     // first ret (x:int) but next loops doesn't
